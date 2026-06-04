@@ -57,7 +57,14 @@ export default function Certifications() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {CERTIFICATIONS.map((c, i) => (
-            <motion.div
+  <a
+    key={i}
+    href={c.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -94,6 +101,7 @@ export default function Certifications() {
                 </div>
               </div>
             </motion.div>
+  </a>
           ))}
         </div>
 
