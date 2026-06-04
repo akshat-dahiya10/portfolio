@@ -190,10 +190,15 @@ export default function Hero() {
               View Projects
               <ArrowDownRight className="w-4 h-4" />
             </a>
-            <a href="#contact" className="btn-secondary" data-hover>
-              <Download className="w-4 h-4" />
-              Download Resume
-            </a>
+            <a
+              href="Akshat_dahiya_Resume.pdf"
+              download
+              className="btn-secondary"
+              data-hover
+             >
+  <Download className="w-4 h-4" />
+  Download Resume
+</a>
             <a
               href={`mailto:${PERSONAL.email}`}
               className="btn-secondary"
