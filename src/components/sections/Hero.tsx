@@ -190,9 +190,11 @@ export default function Hero() {
               View Projects
               <ArrowDownRight className="w-4 h-4" />
             </a>
-          <a href="/Akshat_dahiya_resume.pdf" target="_blank">
-  <Download className="w-4 h-4" />
-  Download Resume
+          <a href="/Akshat_dahiya_resume.pdf" download className="inline-block">
+  <button className="btn-secondary flex items-center gap-2">
+    <Download className="w-4 h-4" />
+    Download Resume
+  </button>
 </a>
             <a
               href={`mailto:${PERSONAL.email}`}
