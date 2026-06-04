@@ -191,11 +191,10 @@ export default function Hero() {
               <ArrowDownRight className="w-4 h-4" />
             </a>
             <a
-              href="Akshat_dahiya_Resume.pdf"
-              download
-              className="btn-secondary"
-              data-hover
-             >
+  href="/Akshat_dahiya_resume.pdf"
+  download
+  className="btn-secondary flex items-center gap-2"
+>
   <Download className="w-4 h-4" />
   Download Resume
 </a>
