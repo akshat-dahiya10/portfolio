@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Code2, Link, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
-import emailjs from "emailjs-com";// ✅ NEW
+import emailjs from "@emailjs/browser";// ✅ NEW
 import { PERSONAL } from "@/lib/constants";
 
 export default function Contact() {
