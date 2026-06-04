@@ -98,11 +98,11 @@ export const PROJECTS = [
 
 export const CERTIFICATIONS = [
   {
-    title: "Machine Learning with Python",
-    issuer: "IBM · Coursera",
+    title: "Introduction to Large Language Model",
+    issuer: "Google cloud",
     year: "2024",
-    level: "Intermediate",
     category: "AI & ML",
+    link: "/certificates/llm.pdf", // 👈 ADD THIS
   },
   {
     title: "Generative AI: Prompt Engineering Basics",
@@ -110,20 +110,22 @@ export const CERTIFICATIONS = [
     year: "2024",
     level: "Intermediate",
     category: "AI & ML",
+    link:"/certificates/Generative Ai.pdf",
   },
   {
-    title: "Python for Data Science and AI",
-    issuer: "IBM · Coursera",
+    title: "Python Essentials",
+    issuer: "Cisco",
     year: "2024",
     level: "Intermediate",
     category: "AI & ML",
+    link:"/certificates/PythonEssentials2Update20260604-31-o4ozop.pdf",
   },
   {
-    title: "Excel Essentials for Data Analytics",
-    issuer: "IBM · Coursera",
+    title: "Introduction to Responsible Ai",
+    issuer: "Google Cloud",
     year: "2024",
-    level: "Foundational",
-    category: "Analytics",
+    category: "Ai",
+    link:"/certificates/Responsibleai.pdf",
   },
   {
     title: "SQL: A Practical Introduction to Querying Databases",
@@ -131,6 +133,7 @@ export const CERTIFICATIONS = [
     year: "2024",
     level: "Foundational",
     category: "Data",
+    link:"/certificates/SQL certificate.pdf",
   },
   {
     title: "HTML, CSS, and JavaScript for Web Developers",
@@ -138,13 +141,15 @@ export const CERTIFICATIONS = [
     year: "2024",
     level: "Foundational",
     category: "Web",
+    link:"/certificates/WhatsApp Image 2025-06-30 at 14.36.38_01a26983.pdf",
   },
   {
-    title: "Break into Data Analytics Workshop",
-    issuer: "Coding Ninjas 10X Club × IIT Kharagpur",
+    title: "Microsoft Copilot",
+    issuer: "Microsoft",
     year: "2024",
-    level: "Workshop",
-    category: "Analytics",
+    level: "Medium",
+    category: "Ai",
+    link:"/certificates/Microsoft copilot.pdf",
   },
 ];
 
