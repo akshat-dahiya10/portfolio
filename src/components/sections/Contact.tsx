@@ -81,11 +81,9 @@ export default function Contact() {
               </div>
               <div className="flex flex-wrap gap-2">
                 {[
-                  { icon: Code2, label: "GitHub", href: "#" },
-                  { icon: Link, label: "LinkedIn", href: "#" },
-                  { icon: AtSign, label: "Twitter", href: "#" },
-                  { icon: MessageCircle, label: "Discord", href: "#" },
-                ].map((s) => (
+  { icon: Code2, label: "GitHub", href: "https://github.com/akshat-dahiya10" },
+  { icon: Link, label: "LinkedIn", href: "https://www.linkedin.com/in/akshat-dahiya10/" },
+].map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
