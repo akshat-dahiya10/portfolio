@@ -108,7 +108,7 @@ export default function Projects() {
                     </div>
                   </div>
 
-                 {/* Action buttons */}
+                {/* Action buttons */}
 <div className="mt-6 flex flex-wrap gap-2">
   <a
     href="https://github.com/akshat-dahiya10/movie-recommendation-system"
@@ -129,7 +129,7 @@ export default function Projects() {
     <ExternalLink className="w-4 h-4" />
     Live Demo
   </a>
-</div>
+</div> {/* ✅ YE CLOSE MISSING THA */}
                 {/* Right: Case study */}
                 <div className="p-8 md:p-10 space-y-6">
                   <CaseBlock
