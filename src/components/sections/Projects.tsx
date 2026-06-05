@@ -108,14 +108,13 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  {/* Action buttons */}
+                 {/* Action buttons */}
 <div className="mt-6 flex flex-wrap gap-2">
   <a
     href="https://github.com/akshat-dahiya10/movie-recommendation-system"
     target="_blank"
     rel="noopener noreferrer"
-    className="btn-primary text-sm"
-    data-hover
+    className="btn-primary text-sm flex items-center gap-2"
   >
     <Code2 className="w-4 h-4" />
     GitHub
@@ -125,13 +124,12 @@ export default function Projects() {
     href="https://movie-recommendation-system-dun.vercel.app/"
     target="_blank"
     rel="noopener noreferrer"
-    className="btn-secondary text-sm"
-    data-hover
+    className="btn-secondary text-sm flex items-center gap-2"
   >
     <ExternalLink className="w-4 h-4" />
     Live Demo
   </a>
-
+</div>
                 {/* Right: Case study */}
                 <div className="p-8 md:p-10 space-y-6">
                   <CaseBlock
