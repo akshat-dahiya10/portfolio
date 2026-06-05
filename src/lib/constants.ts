@@ -72,27 +72,37 @@ export const PROJECTS = [
     title: "Movie Recommendation System",
     subtitle: "ML · Content-Based Filtering · Python",
     year: "2024",
+
+    github: "https://github.com/akshat-dahiya10/movie-recommendation-system",   // ✅ ADD THIS
+    demo: "https://movie-recommendation-system-dun.vercel.app/",               // ✅ ADD THIS
+
     problem:
       "Users are overwhelmed by choice in the streaming era. With thousands of titles available, discovery becomes noise — leading to decision fatigue and poor engagement.",
+
     solution:
-      "Designed and implemented a content-based movie recommendation engine that learns from user preferences and surfaces highly relevant titles using cosine similarity over movie metadata.",
+      "Designed and implemented a content-based movie recommendation engine...",
+
     architecture: [
-      "Data Pipeline: Curated a structured movie dataset with genres, keywords, and cast",
-      "Feature Extraction: TF-IDF vectorization on metadata fields",
-      "Similarity Engine: Cosine similarity matrix over item vectors",
-      "Inference Layer: Top-N recommendations ranked by user profile overlap",
+      "Data Pipeline: Curated a structured movie dataset",
+      "Feature Extraction: TF-IDF vectorization",
+      "Similarity Engine: Cosine similarity",
+      "Inference Layer: Top-N recommendations",
     ],
-    tech: ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "Mathematical Modeling"],
+
+    tech: ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn"],
+
     features: [
       "Content-based filtering algorithm",
       "Cosine similarity scoring",
       "Personalized recommendation output",
       "Data-driven insights pipeline",
     ],
+
     challenges:
-      "Cold-start problem for new users and data sparsity in metadata. Mitigated through careful feature engineering and robust fallback strategies.",
+      "Cold-start problem for new users and data sparsity in metadata.",
+
     results:
-      "Delivered a working end-to-end recommendation prototype that demonstrates the full ML lifecycle — from data prep to model inference — and forms the foundation for a scalable streaming recommendation service.",
+      "Delivered a working end-to-end recommendation prototype...",
   },
 ];
 
