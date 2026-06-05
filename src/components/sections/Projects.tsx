@@ -5,9 +5,6 @@ import {
   ExternalLink,
   Code2,
   ArrowRight,
-  Cpu,
-  Database,
-  GitBranch,
   Layers,
   CheckCircle2,
   AlertCircle,
@@ -16,19 +13,12 @@ import {
 } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
 
-const ICONS = {
-  Cpu,
-  Database,
-  GitBranch,
-  Layers,
-};
-
 export default function Projects() {
   return (
     <section id="projects" className="relative py-32 px-6">
       <div className="max-w-7xl mx-auto">
 
-        {/* Heading */}
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,15 +26,17 @@ export default function Projects() {
           className="mb-16"
         >
           <div className="section-label mb-4">Projects</div>
+
           <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-gradient max-w-3xl">
             Shipped work, not just ideas.
           </h2>
+
           <p className="mt-6 text-lg text-text-muted max-w-3xl">
             Each project is treated as a case study — from problem to results.
           </p>
         </motion.div>
 
-        {/* Projects */}
+        {/* PROJECT LIST */}
         <div className="space-y-8">
           {PROJECTS.map((project, i) => (
             <motion.article
@@ -53,10 +45,11 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass rounded-3xl overflow-hidden relative group"
+              className="glass rounded-3xl overflow-hidden"
             >
 
-              <div className="relative grid lg:grid-cols-[1fr_1.3fr]">
+              {/* GRID */}
+              <div className="grid lg:grid-cols-[1fr_1.3fr]">
 
                 {/* LEFT SIDE */}
                 <div className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-border">
@@ -69,18 +62,20 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <p className="text-text-muted text-sm">
+                  <p className="text-sm text-text-muted">
                     {project.subtitle}
                   </p>
 
-                  {/* Tech */}
+                  {/* TECH */}
                   <div className="mt-6 flex flex-wrap gap-2">
                     {project.tech.map((t) => (
-                      <span key={t} className="chip">{t}</span>
+                      <span key={t} className="chip">
+                        {t}
+                      </span>
                     ))}
                   </div>
 
-                  {/* Buttons */}
+                  {/* BUTTONS */}
                   <div className="mt-6 flex gap-3">
                     <a
                       href={project.github}
@@ -120,22 +115,50 @@ export default function Projects() {
                     text={project.solution}
                   />
 
+                  {/* ARCHITECTURE */}
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <Layers className="w-4 h-4 text-accent" />
-                      <span className="text-xs text-text-dim uppercase">
+                      <span className="text-xs uppercase text-text-dim">
                         Architecture
                       </span>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-2">
                       {project.architecture.map((step, idx) => (
-                        <div key={idx} className="glass p-3 text-sm">
-                          STEP {idx + 1} - {step}
+                        <div
+                          key={idx}
+                          className="glass p-3 text-sm border border-border"
+                        >
+                          STEP {idx + 1} — {step}
                         </div>
                       ))}
                     </div>
                   </div>
+
+                  {/* FEATURES */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <CheckCircle2 className="w-4 h-4 text-green-400" />
+                      <span className="text-xs uppercase text-text-dim">
+                        Features
+                      </span>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-2">
+                      {project.features.map((f, idx) => (
+                        <div key={idx} className="text-sm text-text-muted">
+                          • {f}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <CaseBlock
+                    icon={AlertCircle}
+                    label="Challenges"
+                    text={project.challenges}
+                  />
 
                   <CaseBlock
                     icon={Trophy}
@@ -143,14 +166,15 @@ export default function Projects() {
                     text={project.results}
                   />
 
-                </div>
+                </div> {/* ✅ RIGHT CLOSED */}
 
-              </div>
+              </div> {/* ✅ GRID CLOSED */}
+
             </motion.article>
           ))}
         </div>
 
-        {/* Footer */}
+        {/* FOOTER */}
         <div className="mt-12 text-center">
           <a
             href="https://github.com"
@@ -168,7 +192,7 @@ export default function Projects() {
   );
 }
 
-/* CaseBlock */
+/* REUSABLE BLOCK */
 function CaseBlock({
   icon: Icon,
   label,
@@ -182,9 +206,14 @@ function CaseBlock({
     <div>
       <div className="flex items-center gap-2 mb-2">
         <Icon className="w-4 h-4 text-accent" />
-        <span className="text-xs uppercase">{label}</span>
+        <span className="text-xs uppercase text-text-dim">
+          {label}
+        </span>
       </div>
-      <p className="text-sm text-text-muted">{text}</p>
+
+      <p className="text-sm text-text-muted leading-relaxed">
+        {text}
+      </p>
     </div>
   );
 }
