@@ -42,16 +42,15 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          name: form.name,
-          email: form.email,
-          message: form.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
-
+  "test",
+  "test",
+  {
+    name: form.name,
+    email: form.email,
+    message: form.message,
+  },
+  "test"
+);
       setSent(true);
 
       setTimeout(() => {
