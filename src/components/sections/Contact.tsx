@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
-import * as emailjs from "@emailjs/browser"; // ✅ FIXED IMPORT
+import * as emailjs from "@emailjs/browser";
 
 type FormData = {
   name: string;
@@ -41,14 +41,14 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        "test", // later replace with env
-        "test",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           name: form.name,
           email: form.email,
           message: form.message,
         },
-        "test"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
       setSent(true);
@@ -84,7 +84,7 @@ export default function Contact() {
               onChange={(e) =>
                 setForm({ ...form, name: e.target.value })
               }
-              className="input"
+              className="w-full p-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
               required
             />
 
@@ -95,7 +95,7 @@ export default function Contact() {
               onChange={(e) =>
                 setForm({ ...form, email: e.target.value })
               }
-              className="input"
+              className="w-full p-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
               required
             />
           </div>
@@ -106,7 +106,7 @@ export default function Contact() {
             onChange={(e) =>
               setForm({ ...form, message: e.target.value })
             }
-            className="input h-32"
+            className="w-full p-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 h-32 focus:outline-none focus:border-purple-500"
             required
           />
 
