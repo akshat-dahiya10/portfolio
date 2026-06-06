@@ -1,97 +1,143 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import {
+  ExternalLink,
+  Code2,
+  ArrowRight,
+  Cpu,
+  Database,
+  GitBranch,
+  Layers,
+  CheckCircle2,
+  AlertCircle,
+  Trophy,
+  Lightbulb,
+} from "lucide-react";
 
 const projects = [
   {
     title: "Movie Recommendation System",
-    subtitle: "AI/ML Project",
-    description:
-      "Built a smart movie recommendation system using machine learning algorithms that suggests movies based on user preferences.",
-    tech: ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
+    subtitle: "ML · Content-Based Filtering · Python",
+    year: "2025",
+    tech: ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn"],
+    problem:
+      "Users struggle to find relevant movies among thousands of options.",
+    solution:
+      "Built a content-based recommendation system using similarity scoring.",
+    architecture: [
+      "Data Collection",
+      "Preprocessing",
+      "Feature Extraction",
+      "Similarity Model",
+    ],
+    features: [
+      "Real-time recommendations",
+      "Fast similarity matching",
+      "Clean UI",
+      "Scalable design",
+    ],
+    challenges:
+      "Handling large datasets and optimizing similarity calculations.",
+    results:
+      "Achieved fast and accurate recommendations with improved UX.",
     github:
       "https://github.com/akshat-dahiya10/movie-recommendation-system",
-    live:
-      "https://movie-recommendation-system-dun.vercel.app/",
+    demo: "https://movie-recommendation-system-dun.vercel.app/",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="py-24 px-6">
+    <section id="projects" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
 
-        {/* Heading */}
-        <h2 className="text-4xl font-bold mb-12 text-center">
-          My Projects 🚀
-        </h2>
+        <h2 className="text-4xl font-bold mb-10">Projects</h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((project, index) => (
+        <div className="space-y-10">
+          {projects.map((project, i) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="relative group"
+              className="border rounded-xl p-6"
             >
-              {/* Glow */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-20 group-hover:opacity-60 transition"></div>
+              {/* Title */}
+              <h3 className="text-2xl font-bold">{project.title}</h3>
+              <p className="text-gray-400">{project.subtitle}</p>
 
-              {/* Card */}
-              <div className="relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl group-hover:scale-[1.03] transition">
+              {/* Tech */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.tech.map((t, idx) => (
+                  <span key={idx} className="px-2 py-1 border rounded text-sm">
+                    {t}
+                  </span>
+                ))}
+              </div>
 
-                <h3 className="text-2xl font-bold mb-1 group-hover:text-purple-400">
-                  {project.title}
-                </h3>
+              {/* Mock UI */}
+              <div className="mt-6 border rounded-lg p-4">
+                <p className="mb-2 font-semibold">Recommendation Engine</p>
+                {[88, 74, 62, 51].map((v, idx) => (
+                  <div key={idx} className="flex items-center gap-3 text-sm mb-2">
+                    <div className="flex-1 bg-gray-800 px-3 py-1 rounded">
+                      Movie #{idx + 1}
+                    </div>
+                    <div className="w-32 bg-gray-700 h-2 rounded">
+                      <div
+                        className="bg-purple-500 h-2 rounded"
+                        style={{ width: `${v}%` }}
+                      />
+                    </div>
+                    <span>{v}%</span>
+                  </div>
+                ))}
+              </div>
 
-                <p className="text-sm text-gray-400 mb-3">
-                  {project.subtitle}
-                </p>
+              {/* Buttons ✅ FIXED */}
+              <div className="mt-6 flex gap-4">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-purple-600 rounded hover:scale-105 transition"
+                >
+                  <Code2 size={16} />
+                  GitHub
+                </a>
 
-                <p className="text-gray-300 mb-5">
-                  {project.description}
-                </p>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 border rounded hover:scale-105 transition"
+                >
+                  <ExternalLink size={16} />
+                  Live Demo
+                </a>
+              </div>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs rounded-full bg-white/10 border border-white/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Buttons */}
-                <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-lg hover:bg-white hover:text-black transition"
-                  >
-                    <Github size={16} />
-                    GitHub
-                  </a>
-
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-105 transition"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
-                </div>
-
+              {/* Case Study */}
+              <div className="mt-6 space-y-3 text-sm text-gray-300">
+                <p><b>Problem:</b> {project.problem}</p>
+                <p><b>Solution:</b> {project.solution}</p>
+                <p><b>Challenges:</b> {project.challenges}</p>
+                <p><b>Results:</b> {project.results}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
+        {/* More */}
+        <div className="text-center mt-10">
+          <a
+            href="https://github.com"
+            target="_blank"
+            className="flex items-center justify-center gap-2 text-gray-400 hover:text-white"
+          >
+            View More <ArrowRight size={16} />
+          </a>
+        </div>
       </div>
     </section>
   );
