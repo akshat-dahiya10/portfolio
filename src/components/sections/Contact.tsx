@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import * as emailjs from "@emailjs/browser"; // ✅ FIXED IMPORT
 
 type FormData = {
   name: string;
@@ -21,7 +21,6 @@ export default function Contact() {
     message: "",
   });
 
-  // ✅ VALIDATION FUNCTION
   const validateForm = () => {
     if (!form.name.trim()) return "Name is required";
     if (!form.email.includes("@")) return "Invalid email";
@@ -42,15 +41,16 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-  "test",
-  "test",
-  {
-    name: form.name,
-    email: form.email,
-    message: form.message,
-  },
-  "test"
-);
+        "test", // later replace with env
+        "test",
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        "test"
+      );
+
       setSent(true);
 
       setTimeout(() => {
@@ -68,7 +68,6 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-32 px-6">
       <div className="max-w-7xl mx-auto">
-
         <motion.form
           onSubmit={onSubmit}
           className="glass rounded-2xl p-8 space-y-5"
