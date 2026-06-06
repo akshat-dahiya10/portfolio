@@ -9,7 +9,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "lucide-react":"^1.17.0",
     "@emailjs/browser": "^4.4.1",
     "clsx": "^2.1.1",
     "dotenv": "17.3.1",
