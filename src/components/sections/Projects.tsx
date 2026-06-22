@@ -82,7 +82,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
     const rotateX = -(y / rect.height - 0.5) * 12;
     const rotateY = (x / rect.width - 0.5) * 12;
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
   };
 
   const reset = () => {
@@ -106,20 +106,28 @@ function TiltCard({ children }: { children: React.ReactNode }) {
 
 export default function Projects() {
   return (
-    <section className="py-24 px-6">
+    <section
+      id="projects"   // ✅ FIX (scroll working)
+      className="py-24 px-6 scroll-mt-24"
+    >
       <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text"
+        >
           Projects That Actually Solve Problems 🚀
-        </h2>
+        </motion.h2>
 
         <div className="space-y-12">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <TiltCard key={project.id}>
               <motion.div
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative group rounded-3xl p-[1px] bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500"
               >
                 {/* Glow */}
