@@ -5,27 +5,38 @@ import { ExternalLink, Code2, Sparkles } from "lucide-react";
 
 const projects = [
   {
-    title: "Movie Recommendation System",
-    subtitle: "AI/ML · Content-Based Filtering · Production Ready",
-    description:
-      "An intelligent recommendation engine that suggests movies based on user preferences using NLP & similarity scoring. Designed with scalability and real-time performance in mind.",
-    tech: ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "NLP"],
-    features: [
-      "Content-based filtering using cosine similarity",
-      "Real-time recommendations (<200ms response)",
-      "Clean UI with interactive feedback",
-      "Optimized for large datasets",
-    ],
-    github:
-      "https://github.com/akshat-dahiya10/movie-recommendation-system",
-    demo: "https://movie-recommendation-system-dun.vercel.app/",
-    showProgress: true,
-    metrics: [
-      { label: "Accuracy", value: "92%" },
-      { label: "Response Time", value: "<200ms" },
-      { label: "Dataset Size", value: "10K+ Movies" },
-    ],
-  },
+  title: "AI Interview Simulator (GenAI Powered)",
+  subtitle: "AI · Real-time Interaction · Interview Prep",
+  description:
+    "A next-generation AI-powered interview simulator that conducts dynamic, real-time mock interviews tailored to user-selected roles and skills. It leverages LLM capabilities to simulate realistic interview scenarios, helping users improve confidence, communication, and problem-solving skills.",
+  tech: [
+    "Next.js",
+    "TypeScript",
+    "Groq API",
+    "LLM",
+    "Tailwind CSS",
+    "Framer Motion"
+  ],
+  features: [
+    "Real-time AI-generated interview questions",
+    "Context-aware follow-up questions",
+    "Interactive chat-based interview experience",
+    "Role-based customization (Frontend, Backend, etc.)",
+    "Voice & text input support",
+    "Instant AI feedback and response evaluation",
+    "Clean and modern UI with smooth animations"
+  ],
+  github:
+    "https://github.com/akshat-dahiya10/ai-interview-simulator",
+  demo:
+    "https://ai-interview-simulator-sigma-one.vercel.app/",
+  showProgress: true,
+  metrics: [
+    { label: "Response Speed", value: "<300ms" },
+    { label: "AI Model", value: "LLM Powered" },
+    { label: "Use Case", value: "Interview Prep" }
+  ],
+}
 
   {
     title: "WeatherVue",
