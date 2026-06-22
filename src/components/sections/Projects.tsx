@@ -36,7 +36,7 @@ const projects = [
     { label: "AI Model", value: "LLM Powered" },
     { label: "Use Case", value: "Interview Prep" }
   ],
-}
+},
 
   {
     title: "WeatherVue",
